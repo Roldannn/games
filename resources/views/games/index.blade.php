@@ -35,7 +35,7 @@
                         <td class="d-inline-flex">
                             <a class="btn btn-primary mx-1" href="{{ route('games.show', $game->id) }}">Ver</a>
                             <a class="btn btn-primary mx-1" href="{{ route('games.edit', $game->id) }}">Editar</a>
-                            <form action="{{ route('games.delete', $game->id) }}" method="POST">
+                            <form action="{{ route('games.destroy', $game->id) }}" method="POST">
                                 @csrf
                                 @method('delete')
                                 <button class="btn btn-primary mx-1" type="submit">Borrar</button>

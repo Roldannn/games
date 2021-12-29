@@ -44,7 +44,7 @@ class GameController extends Controller
         return redirect()->route('games.show', $game);
     }
 
-    public function delete(Game $game)
+    public function destroy(Game $game)
     {
         $game->delete();
         return redirect()->route('games.index');

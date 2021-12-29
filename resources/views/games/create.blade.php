@@ -10,37 +10,37 @@
                         @csrf
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" class="form-control" name="name" id="name" value="{{old('name')}}" placeholder="Ingresar Nombre">
+                            <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}" placeholder="Ingresar Nombre">
                             @error('name')
                                 <div class="text-danger">
-                                    {{$message}}
+                                    {{ $message }}
                                 </div>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="url_image">URL de Imagen</label>
-                            <input type="text" class="form-control" name="url_image" id="url_image" value="{{old('url_image')}}" placeholder="Ingresar URL Imagen">
+                            <input type="text" class="form-control" name="url_image" id="url_image" value="{{ old('url_image') }}" placeholder="Ingresar URL Imagen">
                             @error('url_image')
                                 <div class="text-danger">
-                                    {{$message}}
+                                    {{ $message }}
                                 </div>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="description">Descripción</label>
-                            <input type="text" class="form-control" name="description" id="description" value="{{old('description')}}" placeholder="Ingresar Descripción">
+                            <input type="text" class="form-control" name="description" id="description" value="{{ old('description') }}" placeholder="Ingresar Descripción">
                             @error('description')
                                 <div class="text-danger">
-                                    {{$message}}
+                                    {{ $message }}
                                 </div>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="url">URL del Juego</label>
-                            <input type="text" class="form-control" name="url" id="url" value="{{old('url')}}" placeholder="Ingresar URL del Juego">
+                            <input type="text" class="form-control" name="url" id="url" value="{{ old('url') }}" placeholder="Ingresar URL del Juego">
                             @error('url')
                                 <div class="text-danger">
-                                    {{$message}}
+                                    {{ $message }}
                                 </div>
                             @enderror
                         </div>
@@ -48,11 +48,11 @@
                             <label for="status">Estado</label>
                             <div class="form-check">
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="status" name="status" class="custom-control-input" value="1" checked required>
+                                    <input type="radio" id="status" name="status" class="custom-control-input" value="1" {{ old('status') !== '0' ? 'checked' : ''}}>
                                     <label class="custom-control-label" for="status">Online</label>
                                 </div>
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="status2" name="status" class="custom-control-input" value="0">
+                                    <input type="radio" id="status2" name="status" class="custom-control-input" value="0" {{ old('status') === '0' ? 'checked' : '' }}>
                                     <label class="custom-control-label" for="status2">Offline</label>
                                 </div>
                             </div>

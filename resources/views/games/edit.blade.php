@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" name="name" id="name" value="{{ old('name', $game->name) }}" placeholder="Ingresar Nombre">
                         @error('name')
                             <div class="text-danger">
-                                {{$message}}
+                                {{ $message }}
                             </div>
                         @enderror
                     </div>
@@ -23,7 +23,7 @@
                         <input type="text" class="form-control" name="url_image" id="url_image" value="{{ old('url_image', $game->url_image) }}" placeholder="Ingresar URL Imagen">
                         @error('url_image')
                             <div class="text-danger">
-                                {{$message}}
+                                {{ $message }}
                             </div>
                         @enderror
                     </div>
@@ -32,7 +32,7 @@
                         <input type="text" class="form-control" name="description" id="description" value="{{ old('description', $game->description) }}" placeholder="Ingresar Descripción">
                         @error('description')
                             <div class="text-danger">
-                                {{$message}}
+                                {{ $message }}
                             </div>
                         @enderror
                     </div>
@@ -41,7 +41,7 @@
                         <input type="text" class="form-control" name="url" id="url" value="{{ old('url', $game->url) }}" placeholder="Ingresar URL del Juego">
                         @error('url')
                             <div class="text-danger">
-                                {{$message}}
+                                {{ $message }}
                             </div>
                         @enderror
                     </div>
@@ -49,11 +49,11 @@
                         <label for="status">Estado</label>
                         <div class="form-check">
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="status" name="status" class="custom-control-input" value="1" {{ $game->status == 1 ? 'checked' : ''}}>
+                                <input type="radio" id="status" name="status" class="custom-control-input" value="1" {{ old('status', (string)$game->status) !== '0' ? 'checked' : ''}}>
                                 <label class="custom-control-label" for="status">Online</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="status2" name="status" class="custom-control-input" value="0" {{ $game->status == 0 ? 'checked' : ''}}>
+                                <input type="radio" id="status2" name="status" class="custom-control-input" value="0" {{ old('status', (string)$game->status) === '0' ? 'checked' : '' }}>
                                 <label class="custom-control-label" for="status2">Offline</label>
                             </div>
                         </div>

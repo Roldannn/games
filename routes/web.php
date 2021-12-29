@@ -14,16 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [GameController::class, 'index'])->name('games.index');
+Route::get('/', function(){
+    return redirect()->route('games.index');
+});
 
-Route::get('games/create', [GameController::class, 'create'])->name('games.create');
-
-Route::post('games/store', [GameController::class, 'store'])->name('games.store');
-
-Route::get('games/show/{game}', [GameController::class, 'show'])->name('games.show');
-
-Route::get('games/edit/{game}', [GameController::class, 'edit'])->name('games.edit');
-
-Route::put('games/{game}', [GameController::class, 'update'])->name('games.update');
-
-Route::delete('games/{game}', [GameController::class, 'delete'])->name('games.delete');
+Route::resource('games', GameController::class)->names('games');
